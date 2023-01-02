@@ -1,0 +1,65 @@
+echo "# Freddie-Golden-Portfolio" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/FredTheCoder11/Freddie-Golden-Portfolio.git
+git push -u origin main
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+//Freddie Golden Wordle Project
+
+int main() {
+
+    //Setting My Variables
+    int numGuess = 6;
+    string guess;
+    string answer = "great";
+
+    //Asking User For A Guess
+    cout << "Input a 5 Letter Word: " ;
+    cin >> guess;
+
+   
+
+    //User Has 6 Guesses To Guess The Right Answer
+     while(numGuess > 0 && guess != answer){
+
+      int index = 0;
+
+        //Makes Sure That The Code Checks Every Letter In The Word
+        while (index <= 4){
+            //Green If
+
+            if (guess[index] == answer[index]) {
+                cout << guess[index] << " = Green" << endl;
+            
+            //Red If
+            } else if (guess[index] != answer[index] && guess[index] != answer[1] && guess[index] != answer[2] && guess[index] != answer[3] && guess[index] != answer[4]){
+                cout << guess[index] << " = Red" << endl; 
+
+            //Else Letter Is Yellow
+            } else {
+                cout << guess[index] << " = yellow" << endl;
+            }
+                
+            index = index + 1;
+        }
+
+    //Loops The Code Until Guesses Run Out Or User Guesses Right
+    numGuess = numGuess - 1;
+    cout << "You have " << numGuess << " guess(es) left. Input a Word: ";
+    cin >> guess;
+
+     
+     }
+    if (numGuess == 0){
+        cout << "You have run out of guesses";
+    
+    } else {
+        cout << "You're Correct! it took " << abs(numGuess - 7) << " guesses." << endl; }
+
+}
