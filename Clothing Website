@@ -1,0 +1,461 @@
+/* File: index.html*/
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DS4L Clothing</title>
+  <style>
+    body {
+      background-image: url('WorldWide.jpg');
+      background-size: cover;
+      background-position: top;
+      background-repeat: no-repeat;
+    }
+
+    @keyframes colorchange {
+      0% { color: aliceblue; }
+      50% { color: green; }
+      100% { color: cadetblue; }
+    }
+
+    h1 {
+      text-shadow: 2px 2px 4px #FF0000;
+      animation: colorchange 3s infinite;
+      text-align: center;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-decoration: underline;
+      font-weight: 500;
+      font-size: 100px;
+    }
+
+    .navbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7); /* Change the color to match the background */
+      padding: 10px;
+      z-index: 999;
+    }
+
+    .menu-icon {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    .menu-icon span {
+      width: 25px;
+      height: 3px;
+      background-color: #fff; /* Change the color to white or any other desired color */
+      margin-bottom: 5px;
+    }
+
+    .menu {
+      display: none;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .menu li {
+      margin-bottom: 20px;
+      font-size: 30px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #fff; /* Change the color to white or any other desired color */
+    }
+  </style>
+</head>
+<body>
+  <h1>D$4L Clothing</h1>
+
+  <div class="navbar">
+    <div class="menu-icon" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="myNav" class="menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      var menu = document.querySelector('.menu');
+      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+/* File: product.html*/
+<!DOCTYPE html>
+<html>
+<head>
+  <title>D$4L Products</title>
+  <style>
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 20px;
+    }
+    
+    .DripSetShirtBut,
+    .PantsBut,
+    .DripSetHoodieBut,
+    .LongSleeveBut {
+      display: contents;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer; 
+    }
+
+    /* Styles for each product card */
+    .product-card {
+      display: grid;
+      background-color: #898989;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      align-items: center;
+    }
+
+    .product-card img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .product-card h3 {
+      margin-top: 10px;
+      font-size: 20px;
+    }
+
+    .product-card p {
+      margin-top: 5px;
+      font-size: 16px;
+    }
+
+    body {
+      background-image: url('Untitled-Artwork.PNG');
+      background-size: 750px;
+      background-position: top;
+      background-repeat: no-repeat;
+      background-color: #868686;
+    }
+
+    h1 {
+      text-shadow: 2px 2px 4px #FF0000;
+      animation: colorchange 3s infinite;
+      text-align: center;
+      color: white;
+      font-family: Bungee;
+      text-decoration: underline;
+      font-weight: 500;
+      font-size: 60px;
+    }
+
+    nav {
+      flex: 1;
+      text-align: center;
+    }
+
+    .navbar {
+      font-family: Lobster;
+    }
+
+    .navbar ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .navbar ul li {
+      margin: 0 20px;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: x-large;
+      font-weight: 1000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="navbar">
+      <nav id="myNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+        </ul>
+      </nav>
+    </div>
+    <h1>Products</h1>
+
+    <script src="script.js"></script>
+
+    <div class="product-grid">
+      <!-- Shirt -->
+      <div class="product-card">
+        
+          <button class="DripSetShirtBut"> <a href="shirt.html">
+            <img src="DripSetShirt.PNG" alt="Shirt"></a>
+            <h3>DripSet Shirt</h3>
+          
+            <p>Price: $29.99</p>
+            <p>Color: Grey</p>
+          </button>
+       
+      </div>
+
+      <!-- Pants -->
+      <div class="product-card">
+        <button class="PantsBut">
+         <a href="pants.html"> <img src="4LPants.jpg" alt="Pants">  </a>
+          
+          <h3>Jogging Pants</h3>
+         
+          <p>Price: $39.99</p>
+          <p>Color: Grey</p>
+        </button>
+      
+      </div>
+
+      <!-- Sweater -->
+      <div class="product-card">
+        <button class="DripSetHoodieBut">
+          <a href="hoodie.html"> 
+          <img src="DripSetHoodie.JPEG" alt="Hoodie"> </a>
+          <h3>DripSet Hoodie</h3>
+          
+          <p>Price: $49.99</p>
+          <p>Color: Blue</p>
+        </button>
+      
+      </div>
+
+      <!-- Long Sleeve -->
+      <div class="product-card">
+        <button class="LongSleeveBut">
+         <a href=longsleeve.html> <img src="LongSleeveDS.jpg" alt="Long Sleeve"></a>
+          
+          <h3>Long Sleeve Tee</h3> 
+          
+          <p>Price: $29.99</p>
+          <p>Color: Grey</p>
+        </button>
+     
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+
+/* File: shirt.html*/
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clothing Product</title>
+  <style>
+    .product {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px;
+    }
+    
+    .product-image {
+      width: 500px;
+      height: 500px;
+      background-size: cover;
+      background-position: top;
+    }
+    
+    .product-info {
+      text-align: center;
+    }
+    
+    .product-name {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .product-price {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    
+    .order-button {
+      padding: 10px 20px;
+      font-size: 18px;
+      font-weight: bold;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+      nav {
+      flex: 1;
+      text-align: center;
+    }
+
+    .navbar {
+      font-family: Lobster;
+    }
+
+    .navbar ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .navbar ul li {
+      margin: 0 20px;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: black;
+      font-size: x-large;
+      font-weight: 1000;
+    }
+  </style>
+</head>
+<body>
+  <div class="product">
+    <img class="product-image" src="DripSetShirt.PNG" alt="Shirt">
+    <div class="product-info">
+      <h2 class="product-name">DripSet Shirt</h2>
+      <p class="product-price">$29.99</p>
+      <button class="order-button">Order Now</button>
+    </div>
+  </div>
+   <div class="container">
+    <div class="navbar">
+      <nav id="myNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+        </ul>
+      </nav>
+    </div>
+</body>
+</html>
+
+
+/* File: longsleeve.html*/
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clothing Product</title>
+  <style>
+    .product {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px;
+    }
+    
+    .product-image {
+      width: 500px;
+      height: 500px;
+      background-size: cover;
+      background-position: top;
+    }
+    
+    .product-info {
+      text-align: center;
+    }
+    
+    .product-name {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .product-price {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    
+    .order-button {
+      padding: 10px 20px;
+      font-size: 18px;
+      font-weight: bold;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+     nav {
+      flex: 1;
+      text-align: center;
+    }
+
+    .navbar {
+      font-family: Lobster;
+    }
+
+    .navbar ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .navbar ul li {
+      margin: 0 20px;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: black;
+      font-size: x-large;
+      font-weight: 1000;
+    }
+  </style>
+</head>
+<body>
+  <div class="product">
+    <img class="product-image" src="LongSleeveDS.jpg" alt="LongSleeveDS">
+    <div class="product-info">
+      <h2 class="product-name">DripSet Long Sleeve</h2>
+      <p class="product-price">$29.99</p>
+      <button class="order-button">Order Now</button>
+    </div>
+  </div>
+   <div class="container">
+    <div class="navbar">
+      <nav id="myNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+        </ul>
+      </nav>
+    </div>
+</body>
+</html>
