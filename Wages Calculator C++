@@ -1,0 +1,39 @@
+// WAGES (WAGE = Hours Worked * Pay Rate)
+
+// #include <iostream>
+// using namespace std;
+
+// const int ARRAY_SIZE = 5;
+
+// // Copied over from lab 9. Don't modify.
+// double sumArray(double nums[], int arraySize) {
+//   double total = 0;
+//   for (int index = 0; index < arraySize; index++) {
+//     total += nums[index];
+//   }
+//   return total;
+// }
+
+// int main() {
+//   double hoursWorked[ARRAY_SIZE];
+//   double payRates[ARRAY_SIZE];
+//   double wages[ARRAY_SIZE];
+
+//   cout << "Enter hours worked by " << ARRAY_SIZE << " employees: ";
+//   for (int index = 0; index < ARRAY_SIZE; index++) {
+//     cin >> hoursWorked[index];
+//   }
+
+//   cout << "Enter the pay rates of the " << ARRAY_SIZE << " employees: ";
+//   for (int index = 0; index < ARRAY_SIZE; index++) {
+//     cin >> payRates[index];
+//   }
+
+//   for (int index = 0; index < ARRAY_SIZE; index++) {
+//     wages[index] = hoursWorked[index] * payRates[index];
+//   }
+
+//   cout << "Total wages are $" << sumArray(wages, ARRAY_SIZE) << endl;
+
+//   return 0;
+// }
