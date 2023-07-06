@@ -1,0 +1,39 @@
+// // IsNumberInArray?
+// #include <iostream>
+
+// using namespace std;
+
+// bool isNumberInArray(double array[], int arraySize, double target) {
+//   for (int index = 0; index < arraySize; index++) {
+//     if (target == array[index]) {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+
+// int main() {
+//   int arraySize;
+//   double target;
+
+//   cout << "How many numbers are in the array?" << endl;
+//   cin >> arraySize;
+
+//   double arr[arraySize];
+//   cout << "Enter the numbers in the array: " << endl;
+//   for (int index = 0; index < arraySize; index++) {
+//     cin >> arr[index];
+//   }
+
+//   cout << "What is the target number?" << endl;
+//   cin >> target;
+
+//   bool result = isNumberInArray(arr, arraySize, target);
+//   if (result) {
+//     cout << "The target number is in the array." << endl;
+//   } else {
+//     cout << "The target number is not in the array." << endl;
+//   }
+
+//   return 0;
+// }
