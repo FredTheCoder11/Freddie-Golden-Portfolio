@@ -1,0 +1,35 @@
+//Enter answers to see your exam scores
+
+#include <iostream>
+using namespace std;
+
+double gradeExam(char guesses[], char answers[], int size){
+  double numRight = 0; 
+  for(int index = 0; index < size; index += 1){
+    if(guesses[index] == answers[index]){
+      numRight = numRight + 1;
+    }
+  }
+  double percent = numRight / size * 100;
+  return percent;
+}
+
+
+int main() {
+
+  char guesses[5];
+
+  cout << "Enter 5 multiple choice guesses, separated by spaces: ";
+  for(int index = 0; index < 5; index += 1){
+        cin >> guesses[index];
+      }
+  
+  char answers[5] = {'A', 'C', 'B', 'D', 'B'}; // Do NOT modify this line
+
+  if(gradeExam(guesses, answers, 5) > 75){
+    cout << "Congrats, you got " << gradeExam(guesses, answers, 5) << "% on the exam!" << endl;
+  }
+  else { 
+    cout << "You got " << gradeExam(guesses, answers, 5) << "% on the exam. Did you do all the labs and HWs?" << endl;
+  }
+}
