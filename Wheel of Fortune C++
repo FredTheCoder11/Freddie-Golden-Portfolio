@@ -1,0 +1,85 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Copy over the 4 functions you created
+int getNumOccurrences(char letter, string answer){
+  int result1 = 0;
+  for (int index = 0; index < answer.length(); index += 1){
+    if(letter == answer[index]){
+      result1 += 1;
+    }
+}
+return result1;
+}
+ string updatePuzzle(char letter, string puzzle, string answer){
+   for(int index = 0; index < answer.length(); index += 1){
+     if( letter == answer[index]) {
+        puzzle[index] = letter;
+     }
+   }
+   return puzzle;
+ }
+ char getCapitalLetter(){
+  char letter1;
+   cout << "Guess a letter: ";
+   cin >> letter1;
+  
+  bool low = islower(letter1);
+  char up = toupper(letter1);
+
+  if (low == true){
+    letter1 = up;
+  }
+  return letter1;
+}
+void printEndMessage(int mistake, int won){
+  cout << "You made " << mistake << " mistake(s) and won $" << won << endl; 
+}
+
+// A very basic function that always returns $500.
+// Do not modify (needed for autograder)
+int spinWheel() {
+  return 500;
+}
+
+// This function accepts an answer, and replaces all the non-space
+// characters with underscores.
+string makePuzzle(string answer) {
+  string puzzle = answer;
+  for (int index = 0; index < answer.length(); index++) {
+    if (answer[index] != ' ') {
+      puzzle[index] = '_';
+    }
+  }
+  return puzzle;
+}
+
+int main() {
+  string answer, puzzle;
+  
+  cout << "Create a fully capitalized answer for testing: ";
+  getline(cin >> ws, answer);
+  puzzle = makePuzzle(answer);
+
+  // Write your code below this line
+    // int won = 
+    int mistake = 0;
+    int won = 0;
+    int moneyTotal = 0;
+  while (puzzle != answer){
+    int spin = spinWheel();
+    char letter = getCapitalLetter();
+    int numOccurrences = getNumOccurrences(letter, answer);
+    if (numOccurrences == 0){
+      mistake += 1;
+      cout << letter << " not in puzzle." << endl;
+    }
+    else{
+      moneyTotal = moneyTotal + spin * numOccurrences;
+      puzzle = updatePuzzle(letter, puzzle, answer);
+      cout << puzzle << endl;
+    }
+  }
+printEndMessage(mistake, moneyTotal);
+}
