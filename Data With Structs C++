@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+//Using Structs To Input Data From Two Films
+
+struct MovieDataFG
+{
+    // Title
+    string title;
+    // Director
+    string director;
+    // Year Released
+    int yearReleased;
+    // Running Time (in minutes)
+    double runTime; 
+};
+
+void printStruct(MovieDataFG X);
+
+int main() {
+
+    // Movie Data
+    MovieDataFG movie1 = {"Captain America: Civil War", "Joe Russo", 2016, 148};
+    MovieDataFG movie2 = {"American Psycho", "Mary Harron", 2000, 104}; 
+    // Display data on screen
+    cout << "\nMovie 1\n";
+    printStruct(movie1);
+
+    cout << "\nMovie 2\n";
+    printStruct(movie2);
+}
+
+void printStruct(MovieDataFG X) {
+    cout << "\nMovie: \t\t\t" << X.title << endl;
+    cout << "Director: \t\t" << X.director << endl;
+    cout << "Year Released: \t" << X.yearReleased << endl;
+    cout << "Run Time: \t\t" << X.runTime << endl;
+}
