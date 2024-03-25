@@ -1,0 +1,72 @@
+//Freddie Golden
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct TreeNode {
+    string val;
+    TreeNode* left;
+    TreeNode* right;
+    TreeNode(string x) : val(x), left(nullptr), right(nullptr) {}
+};
+
+// Function to find the minimum value in a BST
+string findMin(TreeNode* root) {
+    // Base case: If the tree is empty, return an empty string
+    if (root == nullptr) {
+        return "";
+    }
+    // If the left child is null, it means the current node is the smallest
+    if (root->left == nullptr) {
+        return root->val;
+    }
+    // Otherwise, recursively find the minimum value in the left subtree
+    return findMin(root->left);
+}
+
+// Function to insert a new node into the BST
+TreeNode* insertBST(TreeNode* root, string val) {
+    if (root == nullptr) {
+        return new TreeNode(val);
+    }
+
+    if (val < root->val) {
+        root->left = insertBST(root->left, val);
+    } else {
+        root->right = insertBST(root->right, val);
+    }
+
+    return root;
+}
+
+// Function to display the BST using inorder traversal
+void inorderTraversal(TreeNode* root) {
+    if (root != nullptr) {
+        inorderTraversal(root->left);
+        cout << root->val << " ";
+        inorderTraversal(root->right);
+    }
+}
+
+int main() {
+    TreeNode* root = nullptr;
+    string word;
+    char choice;
+
+    do {
+        cout << "Enter a word to insert into the BST: ";
+        cin >> word;
+        root = insertBST(root, word);
+
+        cout << "Do you want to insert another word? (y/n): ";
+        cin >> choice;
+    } while (choice == 'y' || choice == 'Y');
+
+    // Print the BST inorder to get alphabetical order
+    cout << "Alphabetical order:" << endl;
+    inorderTraversal(root);
+    cout << endl;
+
+    return 0;
+}
