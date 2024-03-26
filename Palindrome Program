@@ -1,0 +1,64 @@
+#include <iostream>
+#include <stack> // stack library
+#include <queue> //  queue library
+#include <cctype> //  cctype library to convert all to lowercase
+#include <string> // include string library 
+using namespace std;
+
+
+// function to check if a phrase is a palindrome
+bool isPalindrome(const string& phrase) {
+    stack<char> charStack; //  stack to store characters
+    queue<char> charQueue; // queue to store characters
+
+    // loop thru each character in given phrase
+  for (size_t i = 0; i < phrase.size(); i++) {
+      char c = phrase[i];
+      if (!isspace(c)) { // ignore spaces
+          charStack.push(tolower(c)); // push character to stack, convert to lowercase)
+          charQueue.push(tolower(c)); // En queue character, convert to lowercase)
+      }
+  }
+
+    // compare characters from stack and queue
+    while (!charStack.empty() && !charQueue.empty()) {
+        if (charStack.top() != charQueue.front()) { // check if characters don't match
+            return false; // return NOT a palindrome
+        }
+        charStack.pop(); // pop character from stack
+        charQueue.pop(); // de queue character from queue
+    }
+
+    // if both stack and queue are empty, its a palindrome
+    return charStack.empty() && charQueue.empty();
+}
+
+int main() {
+    // given test phrases
+    vector<string> phrases = {
+        "racecar",
+        "madam",
+        "able was I ere I saw Elba",
+        "a man a plan a canal Panama",
+        "madam im adam",
+        "racecars"
+    };
+
+    // check each phrase
+  for (size_t i = 0; i < phrases.size(); i++) {
+      string phrase = phrases[i];
+    //print result
+      cout << "Phrase: " << phrase << endl;
+
+      if (isPalindrome(phrase)) {
+          cout << "It is a palindrome." << endl;
+      } else {
+          cout << "It is not a palindrome." << endl;
+      }
+
+      cout << endl;
+  }
+
+
+    return 0;
+}
