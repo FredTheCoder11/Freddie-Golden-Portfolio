@@ -1,0 +1,54 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+string caesarCipher(string text, int shift, char mode) {
+    string result = "";
+    for (char& c : text) {
+        cout << "Processing character: " << c << endl;
+        if (isalpha(c)) {
+            char base = isupper(c) ? 'A' : 'a';
+            cout << "Base character: " << base << endl;
+            int offset = (int)c - base;
+            cout << "Offset: " << offset << endl;
+            if (mode == 'e') {
+                c = (char)(((offset + shift) % 26) + base);
+                cout << "Encrypted character: " << c << endl;
+            } else if (mode == 'd') {
+                c = (char)(((offset - shift + 26) % 26) + base);
+                cout << "Decrypted character: " << c << endl;
+            }
+        }
+        result += c;
+    }
+    return result;
+}
+
+int main() {
+    char mode;
+    int shift;
+    string text;
+
+    cout << "Enter 'e' to encrypt or 'd' to decrypt: ";
+    cin >> mode;
+
+    if (mode != 'e' && mode != 'd') {
+        cout << "Invalid mode. Please enter 'e' or 'd'." << endl;
+        return 1;
+    }
+
+    cout << "Enter the shift value (an integer): ";
+    cin >> shift;
+
+    cout << "Enter the text: ";
+    cin.ignore(); // Ignore newline character left in the buffer
+    getline(cin, text);
+
+    if (mode == 'e') {
+        cout << "Encrypted text: " << caesarCipher(text, shift, 'e') << endl;
+    } else {
+        cout << "Decrypted text: " << caesarCipher(text, shift, 'd') << endl;
+    }
+
+    return 0;
+}
